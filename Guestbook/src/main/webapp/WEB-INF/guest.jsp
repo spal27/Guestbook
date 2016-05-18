@@ -8,7 +8,7 @@
  
 <html>
     <head>
-        <title>JPA Guestbook Web Application Tutorial</title>
+        <title>JPA Guestbook Web Application</title>
     </head>
  
     <body>
