@@ -81,6 +81,7 @@
    <version>1.6.10</version>
   </dependency>
 </dependencies>
+
 <build>
   <pluginManagement>
    <plugins>
@@ -88,9 +89,27 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <configuration>
-            <webXml>WebContent\WEB-INF\web.xml</webXml>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
     </plugin>
+   
+   		<plugin>
+				<groupId>com.lazerycode.jmeter</groupId>
+				<artifactId>jmeter-maven-plugin</artifactId>
+				<version>1.4.1</version>
+				<configuration>
+					<testResultsTimestamp>false</testResultsTimestamp>
+				</configuration>
+				<executions>
+					<execution>
+						<id>jmeter-tests</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jmeter</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
    
     <plugin>
      <groupId>org.apache.maven.plugins</groupId>
